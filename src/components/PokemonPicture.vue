@@ -1,6 +1,6 @@
 <template>
   <div class="pokemon-container">
-    <img :src="imgSrc" class="hidden-pokemon" alt="pokemon" srcset="" />
+    <img  v-if="!showPokemon" :src="imgSrc" class="hidden-pokemon" alt="pokemon" srcset="" />
     <img
       v-if="showPokemon"
       :src="imgSrc"
@@ -16,31 +16,31 @@ export default {
   props: {
     pokemonId: {
       type: Number,
-      required: true,
+      required: true
     },
-    showPokemon:{
+    showPokemon: {
       type: Boolean,
       required: true,
       default: false
     }
   },
   computed: {
-    imgSrc() {
-      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemonId}.svg`;
-    },
-  },
-};
+    imgSrc () {
+      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemonId}.svg`
+    }
+  }
+}
 </script>
 
 <style scoped>
 /* Pokemon Picture */
 .pokemon-container {
   height: 200px;
+  justify-content: center;
+  flex: 0%;
 }
 img {
   height: 200px;
-  position: absolute;
-  right: 32%;
   user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
