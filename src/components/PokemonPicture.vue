@@ -1,6 +1,12 @@
 <template>
   <div class="pokemon-container">
-    <img  v-if="!showPokemon" :src="imgSrc" class="hidden-pokemon" alt="pokemon" srcset="" />
+    <img
+      v-if="!showPokemon"
+      :src="imgSrc"
+      class="hidden-pokemon"
+      alt="pokemon"
+      srcset=""
+    />
     <img
       v-if="showPokemon"
       :src="imgSrc"
